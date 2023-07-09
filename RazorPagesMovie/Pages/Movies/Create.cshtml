@@ -1,0 +1,49 @@
+@page
+@model RazorPagesMovie.Pages_Movies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MovieModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MovieModel.Title" class="control-label"></label>
+                <input asp-for="MovieModel.Title" class="form-control" />
+                <span asp-validation-for="MovieModel.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieModel.ReleaseDate" class="control-label"></label>
+                <input asp-for="MovieModel.ReleaseDate" class="form-control" />
+                <span asp-validation-for="MovieModel.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieModel.Genre" class="control-label"></label>
+                <input asp-for="MovieModel.Genre" class="form-control" />
+                <span asp-validation-for="MovieModel.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieModel.Price" class="control-label"></label>
+                <input asp-for="MovieModel.Price" class="form-control" />
+                <span asp-validation-for="MovieModel.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
